@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalhes do produto | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a class="active" href="index.html#catalogo">Produtos</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <a class="back-link" href="index.html">← Voltar para o catálogo</a>
+      <section class="product-detail panel">
+        <div class="product-gallery">
+          <div class="product-photo large" id="detailImage">📄</div>
+          <div class="gallery-thumbs">
+            <span>📄</span>
+            <span>📦</span>
+            <span>✨</span>
+          </div>
+        </div>
+        <div class="detail-copy">
+          <p class="eyebrow">DETALHES DO PRODUTO</p>
+          <h1 id="detailName">Folha A2</h1>
+          <p class="muted" id="detailCategory">Papelaria e impressão</p>
+          <div class="rating">★★★★★ <small>Produto em destaque</small></div>
+          <p id="detailDescription">
+            Papel de alta qualidade para impressões e projetos gráficos.
+          </p>
+          <ul class="specs">
+            <li>Formato: conforme produto selecionado</li>
+            <li>Qualidade: uso escolar e profissional</li>
+            <li>Quantidade: vendida por unidade/pacote</li>
+            <li>Consulte disponibilidade no catálogo</li>
+          </ul>
+          <div class="detail-price" id="detailPrice">
+            R$ 2,50 <small>/ unidade</small>
+          </div>
+          <div class="purchase-row">
+            <div class="quantity">
+              <button data-qty="-1">−</button>
+              <output id="quantity">1</output>
+              <button data-qty="1">+</button>
+            </div>
+            <button class="btn" id="addDetail">🛒 Adicionar ao carrinho</button>
+          </div>
+          <p class="helper">
+            O preço e a disponibilidade exibidos são demonstrativos até a integração com a API.
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meus pedidos | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#catalogo">Produtos</a>
+        <a class="active" href="pedidos.html">Meus pedidos</a>
+        <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <p class="eyebrow">ACOMPANHAMENTO</p>
+      <h1>Meus <span>pedidos</span></h1>
+      <p class="muted">Acompanhe o andamento das suas compras.</p>
+      <div class="search order-search">
+        <input id="orderSearch" placeholder="Buscar por número do pedido...">
+        <button id="searchOrder">⌕</button>
+      </div>
+      <section class="orders" id="ordersList"></section>
+      <p class="helper">
+        Pedidos exibidos como exemplo. A consulta real depende da integração com a API.
+      </p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

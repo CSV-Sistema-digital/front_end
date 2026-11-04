@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finalizar pedido | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a class="active" href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <a class="back-link" href="carrinho.html">← Voltar ao carrinho</a>
+      <p class="eyebrow">QUASE LÁ</p>
+      <h1>Finalizar <span>pedido</span></h1>
+
+      <form id="checkoutForm" class="checkout-grid">
+        <section class="panel form-panel">
+          <h2>Dados do cliente</h2>
+          <div class="form-grid">
+            <label>
+              Nome completo
+              <input required name="nome" placeholder="Digite seu nome">
+            </label>
+            <label>
+              CPF
+              <input required name="cpf" placeholder="000.000.000-00">
+            </label>
+            <label>
+              E-mail
+              <input required type="email" name="email" placeholder="voce@email.com">
+            </label>
+            <label>
+              Telefone
+              <input required name="telefone" placeholder="(11) 99999-9999">
+            </label>
+          </div>
+
+          <h2>Endereço de entrega</h2>
+          <div class="form-grid">
+            <label>
+              CEP
+              <input required name="cep" placeholder="00000-000">
+            </label>
+            <label>
+              Rua e número
+              <input required name="endereco" placeholder="Rua, número">
+            </label>
+            <label>
+              Bairro
+              <input required name="bairro" placeholder="Seu bairro">
+            </label>
+            <label>
+              Cidade
+              <input required name="cidade" placeholder="Sua cidade">
+            </label>
+          </div>
+
+          <h2>Forma de pagamento</h2>
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="pagamento" value="PIX" checked>
+              <span>◇</span>
+              <strong>PIX</strong>
+              <small>Pagamento instantâneo</small>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="pagamento" value="CARTAO">
+              <span>▣</span>
+              <strong>Cartão</strong>
+              <small>Conforme disponibilidade</small>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="pagamento" value="BOLETO">
+              <span>▤</span>
+              <strong>Boleto</strong>
+              <small>Compensação bancária</small>
+            </label>
+          </div>
+        </section>
+
+        <aside class="panel summary">
+          <h2>Resumo do pedido</h2>
+          <div id="checkoutSummary"></div>
+          <div class="summary-line">
+            <span>Frete</span>
+            <strong>R$ 15,00</strong>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <strong id="checkoutTotal">R$ 15,00</strong>
+          </div>
+          <button class="btn full" type="submit">🔒 Confirmar pedido</button>
+          <p class="helper">
+            Demonstração de interface: não envia dados para um servidor.
+          </p>
+        </aside>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

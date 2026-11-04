@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV Gráfica Digital | Produtos</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a class="active" href="index.html">Início</a>
+        <a href="index.html#catalogo">Produtos</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+      </nav>
+      <div class="search">
+        <span>⌕</span>
+        <input id="search" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">QUALIDADE PARA SEUS PROJETOS</p>
+          <h1>Materiais para <span>criar mais.</span></h1>
+          <p>Encontre papéis, materiais escolares e itens para o dia a dia.</p>
+          <a class="btn" href="#catalogo">Explorar produtos ↓</a>
+        </div>
+        <div class="hero-art">
+          <div class="glow-ring"></div>
+          <div class="paper-stack">▱<br>▱<br>▱</div>
+          <span class="floating-chip">Imprima suas ideias</span>
+        </div>
+      </section>
+
+      <div id="catalogo"></div>
+      <section class="category">
+        <div class="section-head">
+          <div>
+            <span class="category-icon">▱</span>
+            <div>
+              <h2>PAPÉIS</h2>
+              <p>Qualidade para seus projetos</p>
+            </div>
+          </div>
+          <span class="muted">4 produtos</span>
+        </div>
+        <div class="products" id="papers"></div>
+      </section>
+
+      <section class="category">
+        <div class="section-head">
+          <div>
+            <span class="category-icon">✎</span>
+            <div>
+              <h2>MATERIAL ESCOLAR</h2>
+              <p>Tudo o que você precisa</p>
+            </div>
+          </div>
+          <span class="muted">4 produtos</span>
+        </div>
+        <div class="products" id="school"></div>
+      </section>
+    </main>
+    <footer>CSV Gráfica Digital · Interface demonstrativa</footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu carrinho | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#catalogo">Produtos</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a class="active" href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <p class="eyebrow">SUA SELEÇÃO</p>
+      <h1>Meu <span>carrinho</span></h1>
+      <p class="muted">Confira os itens antes de continuar para o pagamento.</p>
+
+      <div class="cart-layout">
+        <section class="panel cart-panel">
+          <div class="cart-heading">
+            <h2>Produtos selecionados</h2>
+            <span class="muted" id="cartItemCount">0 itens</span>
+          </div>
+          <div id="cartItems"></div>
+          <div class="cart-bottom">
+            <a class="btn secondary" href="index.html">← Continuar comprando</a>
+          </div>
+        </section>
+
+        <aside class="panel summary">
+          <h2>Resumo do pedido</h2>
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="subtotal">R$ 0,00</strong>
+          </div>
+          <div class="summary-line">
+            <span>Frete estimado</span>
+            <strong id="shipping">R$ 15,00</strong>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <strong id="total">R$ 15,00</strong>
+          </div>
+          <p class="helper">O frete é ilustrativo e será confirmado no checkout.</p>
+          <a class="btn full" id="checkoutBtn" href="checkout.html">Finalizar compra →</a>
+        </aside>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
