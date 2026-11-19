@@ -6,7 +6,7 @@
     <title>CSV Gráfica Digital | Produtos</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="catalog">
     <header class="topbar">
       <a class="brand" href="index.html">
         <span class="brand-mark">CSV</span>
@@ -17,6 +17,7 @@
         <a href="index.html#catalogo">Produtos</a>
         <a href="pedidos.html">Meus pedidos</a>
         <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
       </nav>
       <div class="search">
         <span>⌕</span>
@@ -39,36 +40,10 @@
         </div>
       </section>
 
+      <p id="feedback" role="status" class="feedback"></p>
       <div id="catalogo"></div>
-      <section class="category">
-        <div class="section-head">
-          <div>
-            <span class="category-icon">▱</span>
-            <div>
-              <h2>PAPÉIS</h2>
-              <p>Qualidade para seus projetos</p>
-            </div>
-          </div>
-          <span class="muted">4 produtos</span>
-        </div>
-        <div class="products" id="papers"></div>
-      </section>
-
-      <section class="category">
-        <div class="section-head">
-          <div>
-            <span class="category-icon">✎</span>
-            <div>
-              <h2>MATERIAL ESCOLAR</h2>
-              <p>Tudo o que você precisa</p>
-            </div>
-          </div>
-          <span class="muted">4 produtos</span>
-        </div>
-        <div class="products" id="school"></div>
-      </section>
     </main>
-    <footer>CSV Gráfica Digital · Interface demonstrativa</footer>
-    <script src="app.js"></script>
+    <footer>CSV Gráfica Digital</footer>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

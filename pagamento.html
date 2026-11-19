@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagamento | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="payment">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#catalogo">Produtos</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Pagamento <span>simulado</span></h1>
+      <p id="feedback" role="status" class="feedback"></p>
+      <section id="payment"></section>
+    </main>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

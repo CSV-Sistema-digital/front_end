@@ -6,7 +6,7 @@
     <title>Meu carrinho | CSV</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="cartPage">
     <header class="topbar">
       <a class="brand" href="index.html">
         <span class="brand-mark">CSV</span>
@@ -17,6 +17,7 @@
         <a href="index.html#catalogo">Produtos</a>
         <a href="pedidos.html">Meus pedidos</a>
         <a class="active" href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
       </nav>
     </header>
 
@@ -25,6 +26,7 @@
       <h1>Meu <span>carrinho</span></h1>
       <p class="muted">Confira os itens antes de continuar para o pagamento.</p>
 
+      <p id="feedback" role="status" class="feedback"></p>
       <div class="cart-layout">
         <section class="panel cart-panel">
           <div class="cart-heading">
@@ -39,23 +41,15 @@
 
         <aside class="panel summary">
           <h2>Resumo do pedido</h2>
-          <div class="summary-line">
-            <span>Subtotal</span>
-            <strong id="subtotal">R$ 0,00</strong>
-          </div>
-          <div class="summary-line">
-            <span>Frete estimado</span>
-            <strong id="shipping">R$ 15,00</strong>
-          </div>
           <div class="summary-line total">
-            <span>Total</span>
-            <strong id="total">R$ 15,00</strong>
+            <span>Total estimado</span>
+            <strong id="total">R$ 0,00</strong>
           </div>
-          <p class="helper">O frete é ilustrativo e será confirmado no checkout.</p>
-          <a class="btn full" id="checkoutBtn" href="checkout.html">Finalizar compra →</a>
+          <p class="helper">Os preços serão conferidos no checkout.</p>
+          <a class="btn full" id="checkoutBtn" hidden href="checkout.html">Finalizar compra →</a>
         </aside>
       </div>
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

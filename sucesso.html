@@ -6,7 +6,7 @@
     <title>Pedido recebido | CSV</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="success">
     <header class="topbar">
       <a class="brand" href="index.html">
         <span class="brand-mark">CSV</span>
@@ -15,22 +15,26 @@
       <nav>
         <a href="index.html">Início</a>
         <a href="pedidos.html">Meus pedidos</a>
+        <a href="conta.html">Minha conta</a>
       </nav>
     </header>
     <main class="container success-wrap">
-      <section class="panel success-card">
+      <p id="feedback" role="status" class="feedback"></p>
+      <section class="panel success-card" hidden>
         <div class="success-check">✓</div>
         <p class="eyebrow">CONFIRMAÇÃO</p>
-        <h1>Pedido realizado <span>com sucesso!</span></h1>
-        <p>Seu pedido foi registrado nesta demonstração.</p>
+        <h1>Pagamento <span>confirmado!</span></h1>
+        <p>A confirmação do pagamento simulado foi registrada.</p>
         <div class="order-number">
           Número do pedido
-          <strong id="orderNumber">#GRAFICA0001</strong>
+          <strong id="orderNumber"></strong>
         </div>
-        <a class="btn" href="pedidos.html">▣ Acompanhar pedido</a>
+        <p id="successStatus"></p>
+        <a class="btn" id="detailsLink" href="pedidos.html">▣ Acompanhar pedido</a>
         <a class="btn secondary" href="index.html">⌂ Voltar para o início</a>
       </section>
     </main>
-    <script src="app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
