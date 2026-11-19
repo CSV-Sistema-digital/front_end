@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minha conta | CSV</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="account">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CSV</span>
+        <small>Gráfica Digital</small>
+      </a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#catalogo">Produtos</a>
+        <a href="pedidos.html">Meus pedidos</a>
+        <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Minha <span>conta</span></h1>
+      <p id="feedback" role="status" class="feedback"></p>
+      <form id="authForm" class="panel form-panel account-form" hidden>
+        <div class="form-grid">
+          <label>E-mail <input required type="email" name="email" autocomplete="username"></label>
+          <label>Senha <input required type="password" name="password" autocomplete="current-password"></label>
+        </div>
+        <button class="btn" type="submit" value="login">Entrar</button>
+        <button class="btn secondary" type="submit" value="cadastro">Cadastrar</button>
+      </form>
+      <form id="profileForm" class="panel form-panel account-form" hidden>
+        <h2>Perfil do cliente</h2>
+        <div class="form-grid">
+          <label>Nome completo <input required name="nome" maxlength="150" autocomplete="name"></label>
+          <label>CPF <input required name="cpf" inputmode="numeric" maxlength="18"></label>
+          <label>E-mail da conta <input name="email" type="email" readonly></label>
+          <label>Telefone com DDD <input required name="telefone" type="tel" maxlength="20" autocomplete="tel"></label>
+        </div>
+        <button class="btn" type="submit">Salvar perfil</button>
+      </form>
+      <div id="accountActions"></div>
+    </main>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

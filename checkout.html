@@ -6,7 +6,7 @@
     <title>Finalizar pedido | CSV</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="checkout">
     <header class="topbar">
       <a class="brand" href="index.html">
         <span class="brand-mark">CSV</span>
@@ -16,6 +16,7 @@
         <a href="index.html">Início</a>
         <a href="pedidos.html">Meus pedidos</a>
         <a class="active" href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
       </nav>
     </header>
 
@@ -24,67 +25,38 @@
       <p class="eyebrow">QUASE LÁ</p>
       <h1>Finalizar <span>pedido</span></h1>
 
-      <form id="checkoutForm" class="checkout-grid">
+      <p id="feedback" role="status" class="feedback"></p>
+      <form id="profileForm" class="panel form-panel account-form" hidden>
+        <h2>Perfil do cliente</h2>
+        <div class="form-grid">
+          <label>Nome completo <input required name="nome" maxlength="150" autocomplete="name"></label>
+          <label>CPF <input required name="cpf" inputmode="numeric" maxlength="18"></label>
+          <label>E-mail da conta <input name="email" type="email" readonly></label>
+          <label>Telefone com DDD <input required name="telefone" type="tel" maxlength="20" autocomplete="tel"></label>
+        </div>
+        <button class="btn" type="submit">Salvar perfil</button>
+      </form>
+      <form id="checkoutForm" class="checkout-grid" hidden>
         <section class="panel form-panel">
-          <h2>Dados do cliente</h2>
-          <div class="form-grid">
-            <label>
-              Nome completo
-              <input required name="nome" placeholder="Digite seu nome">
-            </label>
-            <label>
-              CPF
-              <input required name="cpf" placeholder="000.000.000-00">
-            </label>
-            <label>
-              E-mail
-              <input required type="email" name="email" placeholder="voce@email.com">
-            </label>
-            <label>
-              Telefone
-              <input required name="telefone" placeholder="(11) 99999-9999">
-            </label>
-          </div>
-
-          <h2>Endereço de entrega</h2>
-          <div class="form-grid">
-            <label>
-              CEP
-              <input required name="cep" placeholder="00000-000">
-            </label>
-            <label>
-              Rua e número
-              <input required name="endereco" placeholder="Rua, número">
-            </label>
-            <label>
-              Bairro
-              <input required name="bairro" placeholder="Seu bairro">
-            </label>
-            <label>
-              Cidade
-              <input required name="cidade" placeholder="Sua cidade">
-            </label>
-          </div>
-
           <h2>Forma de pagamento</h2>
           <div class="payment-options">
             <label class="payment-option">
               <input type="radio" name="pagamento" value="PIX" checked>
               <span>◇</span>
               <strong>PIX</strong>
-              <small>Pagamento instantâneo</small>
+              <small>Simulado</small>
             </label>
             <label class="payment-option">
               <input type="radio" name="pagamento" value="CARTAO">
               <span>▣</span>
               <strong>Cartão</strong>
-              <small>Conforme disponibilidade</small>
+              <small>Simulado</small>
             </label>
             <label class="payment-option">
               <input type="radio" name="pagamento" value="BOLETO">
               <span>▤</span>
               <strong>Boleto</strong>
-              <small>Compensação bancária</small>
+              <small>Simulado</small>
             </label>
           </div>
         </section>
@@ -92,21 +64,15 @@
         <aside class="panel summary">
           <h2>Resumo do pedido</h2>
           <div id="checkoutSummary"></div>
-          <div class="summary-line">
-            <span>Frete</span>
-            <strong>R$ 15,00</strong>
-          </div>
           <div class="summary-line total">
             <span>Total</span>
-            <strong id="checkoutTotal">R$ 15,00</strong>
+            <strong id="checkoutTotal"></strong>
           </div>
           <button class="btn full" type="submit">🔒 Confirmar pedido</button>
-          <p class="helper">
-            Demonstração de interface: não envia dados para um servidor.
-          </p>
         </aside>
       </form>
     </main>
-    <script src="app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

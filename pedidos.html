@@ -6,7 +6,7 @@
     <title>Meus pedidos | CSV</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="historyPage">
     <header class="topbar">
       <a class="brand" href="index.html">
         <span class="brand-mark">CSV</span>
@@ -17,6 +17,7 @@
         <a href="index.html#catalogo">Produtos</a>
         <a class="active" href="pedidos.html">Meus pedidos</a>
         <a href="carrinho.html">Carrinho <b class="cart-count">0</b></a>
+        <a href="conta.html">Minha conta</a>
       </nav>
     </header>
 
@@ -24,15 +25,10 @@
       <p class="eyebrow">ACOMPANHAMENTO</p>
       <h1>Meus <span>pedidos</span></h1>
       <p class="muted">Acompanhe o andamento das suas compras.</p>
-      <div class="search order-search">
-        <input id="orderSearch" placeholder="Buscar por número do pedido...">
-        <button id="searchOrder">⌕</button>
-      </div>
+      <p id="feedback" role="status" class="feedback"></p>
       <section class="orders" id="ordersList"></section>
-      <p class="helper">
-        Pedidos exibidos como exemplo. A consulta real depende da integração com a API.
-      </p>
     </main>
-    <script src="app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

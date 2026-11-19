@@ -267,7 +267,9 @@ button,input {
   box-shadow: 0 0 20px #007bff35;
 }
 .product-art {
-  height: 120px;
+  aspect-ratio: 1 / 1;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  overflow: hidden;
   border-radius: 12px;
   background: linear-gradient(145deg,#153c72,#09224a);
   display: grid;
@@ -404,7 +406,8 @@ button,input {
 }
 .cart-layout {
   display: grid;
-  grid-template-columns: minmax(0,1.7fr) minmax(270px,.8fr);
+  grid-template-columns: minmax(0,2fr) minmax(270px,1fr);
+  align-items: start;
   gap: 22px;
   margin-top: 25px;
 }
@@ -415,50 +418,85 @@ button,input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 17px;
-  border-bottom: 1px solid #12529b;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #28456c;
 }
 .cart-row {
   display: grid;
-  grid-template-columns: 70px minmax(100px,1fr) auto auto 28px;
-  align-items: center;
+  grid-template-columns: 70px minmax(0,1fr) auto;
+  align-items: start;
   gap: 14px;
-  padding: 17px 0;
-  border-bottom: 1px solid #10376a;
+  padding: 18px 0;
+  border-bottom: 1px solid #28456c;
 }
 .cart-thumb {
-  height: 64px;
-  border-radius: 10px;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  overflow: hidden;
   background: #102e5b;
   display: grid;
+  grid-template: minmax(0,1fr) / minmax(0,1fr);
   place-items: center;
-  font-size: 30px;
 }
-.cart-row h3 {
-  font-size: 13px;
-  margin: 0 0 6px;
+.cart-copy {
+  overflow-wrap: anywhere;
+  padding-top: 4px;
 }
-.cart-row small {
+.cart-quantity {
   color: var(--muted);
+  margin: 8px 0 12px;
 }
-.cart-row .quantity button {
-  width: 28px;
-  height: 30px;
-  font-size: 16px;
+.cart-quantity strong {
+  color: #f0f8ff;
 }
-.cart-row .quantity output {
-  min-width: 28px;
+.cart-controls,.cart-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cart-controls button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #258edd;
+  border-radius: 50%;
+  background: transparent;
+  color: #58baff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.cart-controls button:hover:not(:disabled) {
+  background: #123969;
+}
+.cart-controls button:disabled {
+  opacity: .6;
+  cursor: default;
+}
+.cart-prices {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 20px;
 }
 .cart-unit,.cart-subtotal {
-  font-size: 13px;
   white-space: nowrap;
 }
-.remove {
+.cart-prices .remove {
   background: transparent;
   color: #ff668b;
   border: 0;
-  font-size: 20px;
+  padding: 4px 0;
+  font-size: inherit;
   cursor: pointer;
+}
+.cart-prices .remove:hover {
+  text-decoration: underline;
+}
+.cart-layout > .summary {
+  border-color: #234c81;
+}
+.cart-layout #checkoutBtn {
+  margin-top: 18px;
 }
 .cart-bottom {
   padding-top: 20px;
@@ -769,10 +807,6 @@ footer {
   .products {
     gap: 10px;
   }
-  .product-art {
-    height: 90px;
-    font-size: 43px;
-  }
   .product-card {
     padding: 9px;
   }
@@ -795,27 +829,13 @@ footer {
     font-size: 95px;
   }
   .cart-row {
-    grid-template-columns: 52px 1fr 28px;
-    gap: 9px;
+    grid-template-columns: 60px minmax(0,1fr);
+    gap: 12px;
   }
-  .cart-thumb {
-    height: 52px;
-  }
-  .cart-unit {
-    display: none;
-  }
-  .cart-row .quantity {
-    grid-column: 2;
-    justify-self: start;
-  }
-  .cart-subtotal {
-    grid-column: 3;
-    grid-row: 1;
-    font-size: 11px;
-  }
-  .remove {
-    grid-column: 3;
-    grid-row: 2;
+  .cart-prices {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    justify-content: flex-start;
   }
   .form-grid,.payment-options {
     grid-template-columns: 1fr;
@@ -838,4 +858,53 @@ footer {
     width: 42px;
     height: 42px;
   }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.feedback:not(:empty) {
+  padding: 0.75rem 0;
+  font-weight: 600;
+}
+
+.product-art img,
+.product-photo img,
+.cart-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-art span,
+.product-photo span,
+.cart-thumb span {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.account-form,
+.order-detail {
+  max-width: 50rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.account-form .btn,
+.order-detail .btn {
+  margin: 0.75rem 0.5rem 0 0;
+}
+
+.order-detail strong {
+  display: block;
+}
+
+.order-items {
+  padding-inline-start: 1.25rem;
+}
+
+.order-number {
+  overflow-wrap: anywhere;
 }
